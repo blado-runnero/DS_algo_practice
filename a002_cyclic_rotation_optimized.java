@@ -21,7 +21,7 @@ public class a002_cyclic_rotation_optimized {
 	}
 	
 	static void show_array(int array[], String str) {
-		
+	
 		System.out.println(str+"\n");
 		
 		for (int i=0; i<array.length; i++) {
