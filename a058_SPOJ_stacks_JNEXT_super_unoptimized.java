@@ -50,7 +50,7 @@ public class a058_SPOJ_stacks_JNEXT_super_unoptimized {
 			
 			
 			
-			//\\for(int i=0; i<n; i++) {System.out.print(x[i]);}
+			//for(int i=0; i<n; i++) {System.out.print(x[i]);}
 			
 			
 			
