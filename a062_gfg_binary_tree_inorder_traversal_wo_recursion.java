@@ -1,5 +1,17 @@
 import java.util.Stack;
 
+<<<<<<< HEAD
+=======
+class Node{
+	int data;
+	Node left, right;
+	Node(int d){
+		data = d;
+		right = left = null;
+	}
+}
+
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 
 public class a062_gfg_binary_tree_inorder_traversal_wo_recursion {
 

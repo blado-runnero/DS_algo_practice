@@ -24,7 +24,11 @@ public class a050_gfg_linked_list_reverse_in_pairs {
 		last.next = new_node;
 	}
 	
+<<<<<<< HEAD
 	void print() {
+=======
+	void print(Node head) {
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 		Node last = head;
 		while(last!=null) {
 			System.out.print("\t"+last.data);
@@ -66,16 +70,26 @@ public class a050_gfg_linked_list_reverse_in_pairs {
         return node;
     }
 	
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 	public static void main(String args[]) {
 		a050_gfg_linked_list_reverse_in_pairs ll = new a050_gfg_linked_list_reverse_in_pairs();
 		for (int i =1; i<=11; i++) {
 			ll.append(i);
 		}
+<<<<<<< HEAD
 		ll.print();
 		head = ll.pairWiseSwap(head);
 		System.out.print("\n\n");
 		ll.print();
+=======
+		ll.print(head);
+		head = ll.pairWiseSwap(head);
+		System.out.print("\n\n");
+		ll.print(head);
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 	}
 }

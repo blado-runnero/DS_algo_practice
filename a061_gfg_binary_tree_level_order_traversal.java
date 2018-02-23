@@ -1,5 +1,16 @@
 
 
+<<<<<<< HEAD
+=======
+class Node{
+	int data;
+	Node left, right;
+	Node(int d){
+		data = d;
+		left = right = null;
+	}
+}
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 
 public class a061_gfg_binary_tree_level_order_traversal {
 

@@ -16,7 +16,10 @@ public class a024_gfg_sorting_counting_sort {
 		
 		for (int i = 0; i<arr_len; ++i) {
 			output[count[array[i]]-1] = array[i];
+<<<<<<< HEAD
 			System.out.println(count[array[i]]-1);
+=======
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 			--count[array[i]];
 		}
 		

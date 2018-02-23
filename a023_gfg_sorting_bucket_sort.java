@@ -5,6 +5,7 @@ public class a023_gfg_sorting_bucket_sort {
 		int bucket[] = new int[max+1];
 		for (int i = 0; i<array.length; i++) {
 			bucket[array[i]]++;
+<<<<<<< HEAD
 			//System.out.println("\n"+i+"\t"+bucket[array[i]]+"\t"+array[i]);
 		}
 		
@@ -17,6 +18,14 @@ public class a023_gfg_sorting_bucket_sort {
 				System.out.println(""+i);
 			}
 			//System.out.println(""+i);
+=======
+		}
+		int outpos = 0;
+		for(int i = 0 ;  i<bucket.length ;i++) {
+			for(int j = 0; j<bucket[i]; j++) {
+				array[outpos++] = i;
+			}
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 		}
 		
 	}
@@ -39,7 +48,11 @@ public class a023_gfg_sorting_bucket_sort {
 	}
 	
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		int[] array = {1,4,3,7,2,86,12,56,233,99,7886,324,66,0,35,0,76,235,667,33,7,4,34,56,6,5};
+=======
+		int[] array = {1,4,3,7,2,86,12,56,233,99,7886,324,66,0,35,76,235,667,33,7,4,34,56,6,5};
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 		//int[] array = {5,7,6};
 		System.out.println("Array Before sorting : ");
 		print_array(array);

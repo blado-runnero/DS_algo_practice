@@ -11,6 +11,7 @@ public class a059_codechef_CSUB {
 			str = reader.readLine();
 			int n = Integer.parseInt(str);
 			str = reader.readLine();
+<<<<<<< HEAD
 	        str=str.replace("0","");
 			long count = str.length();
 			count = count++ * (count)/2;
@@ -21,3 +22,26 @@ public class a059_codechef_CSUB {
 	
 }
 			
+=======
+			String ns[] = str.split("");
+			int count = 0;
+			for (int i = 0 ; i < ns.length; i++) {
+				String s = ns[i];
+				//System.out.println("1"+s);
+				if (s.equals("1")) {
+					count++;
+					for (int j = i+1 ; j < ns.length; j++) {
+						if (ns[j].equals(s)) {
+							//System.out.println(count);
+							count++;
+						}
+					}
+				}
+			}
+			
+			System.out.println(count);
+		}
+	}
+
+}
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4

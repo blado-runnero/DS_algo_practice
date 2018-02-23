@@ -29,7 +29,11 @@ public class a057_gfg_stacks_sort {
 		}
 	}
 
+<<<<<<< HEAD
 	private static void sorted_insert(Stack<Integer> s, int x) {
+=======
+	private static void sorted_insert(Stack<Integer> ss, int x) {
+>>>>>>> c41480a1954afd81e5c98574f3759da5900397d4
 		// TODO Auto-generated method stub
 		if (s.isEmpty() || x>s.peek()) {
 			s.push(x);
