@@ -3,6 +3,7 @@ import java.util.Stack;
 
 public class a084_spoj_stacks_HISTOGRAM {
 
+	
 	public static void main(String[] args) throws IOException {
 		java.io.BufferedReader reader = new java.io.BufferedReader (new java.io.InputStreamReader (System.in));
 		String str;
