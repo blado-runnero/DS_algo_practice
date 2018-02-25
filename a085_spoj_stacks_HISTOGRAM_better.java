@@ -15,6 +15,7 @@ public class a085_spoj_stacks_HISTOGRAM_better {
 				break;
 			}
 			
+			
 			Stack<Integer> stack = new Stack<>();
 			long  max = 0;
 			int i = 0;
