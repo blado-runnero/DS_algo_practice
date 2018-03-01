@@ -22,7 +22,6 @@ public class a003_codechef_array_practice_LECANDY {
 			}
 			System.out.println((total<=total_candy)?"Yes":"No");
 			
-			
 		}
 				
 	}
