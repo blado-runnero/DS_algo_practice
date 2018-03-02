@@ -62,29 +62,3 @@ public class a089_codechef_greedy_algo_CLETAB {
 	}
 
 }
-/*
-
-for(int i=0;i<m;i++){
-    queue[ar[i]].removeFirst();
-    if(!table.contains(ar[i])){
-      count++;
-      if(table.size()>=n){
-          int max=Integer.MIN_VALUE;
-          int idx=-1;
-          for(Integer j:table){
-              if(queue[j].isEmpty()){
-                  idx=j;
-                  break;
-              }
-              if(queue[j].getFirst()>max){
-                  max=queue[j].getFirst();
-                  idx=j;
-              }
-          }
-          table.remove(idx);
-      }
-      table.add(ar[i]);
-    }     
-}
-
-*/
