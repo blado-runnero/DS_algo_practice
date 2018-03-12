@@ -28,7 +28,7 @@ public class a101_array_mainp_0_in_last {
 		}
 		
 		for(int i = 0; i<input.length;i++) {
-			System.out.print(input[i]+" ");
+			System.out.print(input[i]+"  ");
 		}
 	}
 
