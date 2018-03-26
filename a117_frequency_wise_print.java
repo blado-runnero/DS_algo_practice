@@ -69,7 +69,7 @@ public class a117_frequency_wise_print {
 		}
 		
 		for(int i = 0; i<n; i++) {
-			System.out.print(out[i] +" " );
+			System.out.print(out[i] +" ");
 		}
 		
 	}
