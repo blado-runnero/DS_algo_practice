@@ -33,7 +33,6 @@ public class a123_count_inversions {
 		while(i<n1 && j<n2) {
 			if(L[i] <= R[j]) {
 				arr[k] = L[i];
-				
 				i++;
 				k++;
 				
