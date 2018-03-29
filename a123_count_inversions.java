@@ -41,10 +41,8 @@ public class a123_count_inversions {
 				arr[k] = R[j];
 				j++;
 				k++;
-			}
 			
-			inv_count = inv_count + (x-i); 
-			
+			inv_count = inv_count + (x-i); 	
 		}
 		
 		while(i<n1) {
