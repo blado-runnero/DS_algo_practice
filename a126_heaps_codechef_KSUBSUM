@@ -1,0 +1,64 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+
+import practice.irctrain.Pair;
+
+public class ksubsum {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		int t = Integer.parseInt(str);
+		while(t-->0){
+			str = br.readLine();
+			String sttr[] = str.split(" ");
+			int n  = Integer.parseInt(sttr[0]);
+			int k1 = Integer.parseInt(sttr[1]);
+			int k2 = Integer.parseInt(sttr[2]);
+			int k3 = Integer.parseInt(sttr[3]);
+			str = br.readLine();
+			sttr = str.split(" ");
+			int num[] = new int[n];
+			for(int i = 0; i<n; i++){
+				num[i] = Integer.parseInt(sttr[i]);
+			}
+			int max =k1;
+			max = Math.max(max, k2);
+			max = Math.max(max, k3);
+			int new_array_size = (int) Math.pow(2, n);
+			PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+			for(int j=0;j<n;j++)
+            {
+                int sum=0;
+                for(int k=j;k<n;k++)
+                {
+                    int numm=(sum+num[k]);
+                    if(pq.size()<=max)
+                    {
+                        pq.add(numm);
+                    }
+                    else if(pq.peek()<numm)
+                    {
+                        pq.remove();
+                        pq.add(numm);
+                    }
+                   sum+=num[k];
+                }
+            }
+                int ar[];
+                ar=new int[2500];
+                int l=0;
+                while(!pq.isEmpty())
+                {
+                    ar[l]=pq.poll();
+                    l++;
+                }  
+                System.out.print(ar[l-k1]+" "+ar[l-k2]+" "+ar[l-k3]+"\n");	
+		}
+	}
+}
