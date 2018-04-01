@@ -1,0 +1,78 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+import practice.irctrain.Pair;
+
+public class ksubsum {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		int t = Integer.parseInt(str);
+		while(t-->0){
+			str = br.readLine();
+			String sttr[] = str.split(" ");
+			int n  = Integer.parseInt(sttr[0]);
+			int k1 = Integer.parseInt(sttr[1]);
+			int k2 = Integer.parseInt(sttr[2]);
+			int k3 = Integer.parseInt(sttr[3]);
+			str = br.readLine();
+			sttr = str.split(" ");	
+		
+		int arr[] = new int[sttr.length];
+		for(int i = 0; i<arr.length; i++){
+			arr[i] = Integer.parseInt(sttr[i]);
+		}
+		int sum = 0;
+		 
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		int ii = 0; int jj =0;
+		 for (int i = 0; i < (1<<n); i++)
+	        {
+	            for (int j = 0; j < n; j++){
+	                if ((i & (1 << j)) > 0 && (i==ii+1 || j ==jj+1)  ){
+	                sum = sum + arr[j];	
+	                ii = i; 
+	                jj = j;
+	                }
+	                
+	            }
+	            //System.out.println(sum);
+	            list.add(sum);
+	            sum = 0;
+	        }
+		 
+		 Collections.sort(list, new Comparator<Integer>(){
+				public int compare(Integer p1, Integer p2){
+					return (int) (p2-p1);
+				}
+			} );
+		int out1 = 0,out2=0,out3=0;
+		int count = 1;
+		 for(int i: list){
+			 if(count == k1){
+				 out1 = i;
+			 }
+			 if(count == k2){
+				 out2 = i;
+			 }
+			 if(count == k3){
+				 out3 = i;
+			 }
+			 count++;
+			 
+			// System.out.println(i);
+		 }
+		System.out.print(out1+" "+out2+" "+out3);
+		
+		 
+		} 
+	}
+}
