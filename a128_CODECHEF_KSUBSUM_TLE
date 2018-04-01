@@ -1,0 +1,53 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+
+
+public class ksubsum {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		int t = Integer.parseInt(str);
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		while(t-->0){
+			str = br.readLine();
+			String sttr[] = str.split(" ");
+			
+			int decider = Integer.parseInt(sttr[0]);
+			if(decider == 1){
+				int to_add = Integer.parseInt(sttr[1]);
+				list.add(to_add);
+			}
+			else if(decider == 2){
+				if(!list.isEmpty()&&list.size()/3 > 0 ){
+					int x = list.size()/3;
+					Collections.sort(list, new Comparator<Integer>(){
+						public int compare(Integer p1, Integer p2){
+							return (int) (p2-p1);
+						}
+					} );
+					int count = 1;
+					for(int i : list){
+						if(count == x){
+							System.out.println(i);
+							break;
+						}
+						count++;
+					}
+					}
+					
+					
+				else{
+					System.out.println("No reviews yet");
+				}
+			}			
+		} 
+	}
+}
