@@ -1,0 +1,82 @@
+
+
+
+import java.util.*;
+import java.io.*;
+
+
+public class irctrain{
+	
+	static class Pair{
+		long di,ti,si;
+		public Pair(long dd, long tt, long ss){
+			di = dd;
+			ti = tt;
+			si = ss;
+		}
+	}
+
+
+	public static void main(String args[]) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		int t = Integer.parseInt(str);
+		while(t>0){
+			t--;
+			long n,dd;
+			str =  br.readLine();
+			String sttr[] = str.split(" ");
+			n = Long.parseLong(sttr[0]);
+			dd = Long.parseLong(sttr[1]);
+			long d , tt, s;
+			int input = 0;
+			ArrayList<Pair> list = new ArrayList<Pair>();
+			while(input<n){
+				str =  br.readLine();
+				sttr = str.split(" ");
+				d = Long.parseLong(sttr[0]);
+				tt = Long.parseLong(sttr[1]);
+				s = Long.parseLong(sttr[2]);
+				//System.out.println(d+"-"+tt+"-"+s);
+				list.add(new Pair(d,tt,s));
+				input++;
+			}
+
+			
+			Collections.sort(list, new Comparator<Pair>(){
+				public int compare(Pair p1, Pair p2){
+					return (int) (p1.di-p2.di);
+				}
+			} );
+
+			PriorityQueue<Pair> pq = new PriorityQueue<Pair>(new Comparator<Pair>(){
+				public int compare(Pair p1, Pair p2){
+					return (int)(p2.si-p1.si);
+				}
+			});
+
+			int index = 0; 
+			for(int i =1; i<=dd; i++){
+				while(index<list.size() && list.get(index).di <= i){
+					pq.add(list.get(index));
+					index++;
+				}
+				if(!pq.isEmpty()){
+					Pair p = pq.poll();
+					p.ti = p.ti - 1;
+					if(p.ti!= 0){
+						pq.add(p);
+					}
+				}
+			}
+
+			long sad = 0;
+			for(Pair pp : list){
+				sad = sad + (pp.ti * pp.si);
+			}
+
+			System.out.println(sad);
+
+		}
+	}
+}
