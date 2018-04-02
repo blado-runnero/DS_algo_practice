@@ -1,0 +1,61 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+public class median {
+	
+	public static void main(String args[]) throws IOException{
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	String str = br.readLine();
+	int t = Integer.parseInt(str);
+	PriorityQueue<Integer> pq = new PriorityQueue<Integer>(new Comparator<Integer>(){
+		public int compare(Integer p1, Integer p2){
+			return (p1-p2);
+		}
+	});
+	int tt = t;
+	while(t>0){
+		t--;
+		str = br.readLine();
+		int n = Integer.parseInt(str);
+		pq.add(n);
+		
+		
+	}
+	if(tt%2!=0){
+		int x = tt+1;
+		x = x / 2;
+		int count = 1;
+		for(int i : pq){
+			if(count==x){
+				System.out.println(i);
+				break;
+			}
+			count++;
+		}
+		
+	}
+	else{
+		int status = 0;
+		int x = tt;
+		x = x / 2;
+		double xx = 0.0;
+		int count = 1;
+		for(int i : pq){
+			if(count==x||count ==x+1){
+				xx = xx + i;status++;
+				if (status==2){
+					break;
+				}
+			}
+			count++;
+		}
+		xx = xx / 2;
+		System.out.println(xx);
+	}
+}
+}
