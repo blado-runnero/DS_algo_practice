@@ -1,0 +1,91 @@
+package practice;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+public class most_dist {
+
+	static PriorityQueue<pair> pq = new PriorityQueue<pair>(new Comparator<pair>(){
+		public int compare(pair p1, pair p2){
+			return (p1.c-p2.c);
+		}
+	});
+	
+	static int answer = 0,count =1;
+	public static int xor(int num){
+		return (num^answer);
+	}
+	
+	static class pair{
+		int x,y,c;
+		pair(int cc, int xx, int yy){
+			x = xx;
+			y= yy;
+			c =cc;
+		}
+		public static pair find(int n) {
+			// TODO Auto-generated method stub
+			for(pair i : pq){
+				if(i.c == n){
+					return i;
+				}
+			}
+			return null;
+		}
+	}
+	
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
+		int t = Integer.parseInt(str);
+		
+		
+		int tt = t;
+		while(t-->0){
+			str = br.readLine();
+			String sttr[] = str.split(" ");
+			String type = sttr[0];
+			
+			
+			if( type.equals("+") ==true){
+				int x = Integer.parseInt(sttr[1]);
+				x = xor(x);
+				int y = Integer.parseInt(sttr[2]);
+				y = xor(y);
+				pq.add(new pair(count,x,y));
+				count++;
+				//System.out.print("done");
+
+			}
+			else if(type.equals("-")==true){
+				int n = Integer.parseInt(sttr[1]);
+				n = xor(n);
+				pair x = pair.find(n);
+				pq.remove(x);
+				//System.out.print("done");
+				//for(pair i : pq){System.out.println(i.c+"->"+i.x+"->"+i.y);}
+			}
+			else if(type.equals("?")==true) {
+				int x = Integer.parseInt(sttr[1]);
+				x = xor(x);
+				int y = Integer.parseInt(sttr[2]);
+				y = xor(y);
+				int max = 0;
+				int curr = 0;
+			for(pair p:pq){
+				curr = Math.abs(p.x-x);
+				curr = curr + Math.abs(p.y-y);
+				max = Math.max(max, curr);
+			}
+			answer = max;
+				System.out.println(answer);
+			}
+			
+		}
+	}
+
+}
