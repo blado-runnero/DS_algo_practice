@@ -22,9 +22,7 @@ public class median {
 		t--;
 		str = br.readLine();
 		int n = Integer.parseInt(str);
-		pq.add(n);
-		
-		
+		pq.add(n);	
 	}
 	if(tt%2!=0){
 		int x = tt+1;
