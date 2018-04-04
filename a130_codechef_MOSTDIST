@@ -24,7 +24,6 @@ public class most_dist {
 		pair(int cc, int xx, int yy){
 			x = xx;
 			y= yy;
-			
 			c =cc;
 		}
 		public static pair find(int n) {
