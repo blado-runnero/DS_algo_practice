@@ -13,7 +13,6 @@ public class most_dist {
 			return (p1.c-p2.c);
 		}
 	});
-	
 	static int answer = 0,count =1;
 	public static int xor(int num){
 		return (num^answer);
