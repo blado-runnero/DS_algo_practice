@@ -34,7 +34,7 @@ public class a143_linked_list_find_middle_element {
     }
     
     public static void main(String args[]){
-        a1143_linked_list_find_middle_element ll = new a1143_linked_list_find_middle_element();
+        a143_linked_list_find_middle_element ll = new a143_linked_list_find_middle_element();
         for(int i = 13; i >0; i--){
             ll.push(i);
         }
