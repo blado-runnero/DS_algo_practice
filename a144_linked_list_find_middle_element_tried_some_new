@@ -1,0 +1,78 @@
+
+public class a144_linked_list_find_middle_element_tried_some_new {
+    
+    class return_mid{
+        Node m = null;
+        int c = 0;
+    }
+    
+    class Node{
+        int data;
+        Node next;
+        Node(int d){
+            data = d;
+            next = null;
+        }
+    }
+    static Node head;
+    public void push(int d){
+        Node n = new Node(d);
+        n.next = head;
+        head = n;
+    }
+    
+    public void print(Node node, String str){
+        System.out.println(str);
+        int count = 0;
+        while(node != null){
+            count++;
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+        System.out.println();
+    }   
+    
+    return_mid find_mid(Node node){
+        return_mid to_return = new return_mid();
+        if(node == null){
+            to_return.m = null;
+            to_return.c = 0;
+            return to_return;
+        }
+        int count = 1;
+        Node mid = head;
+        while(node.next != null && node.next.next != null){
+            mid = mid.next;
+            node = node.next.next;
+            count++;
+        }
+        //System.out.println(count);
+        if(node.next != null){
+            to_return.c = 2;
+            to_return.m = mid;
+        }else{
+            to_return.c = 1;
+            to_return.m = mid;
+        }
+        return to_return;
+    }
+    
+    public static void main(String args[]){
+        a144_linked_list_find_middle_element_tried_some_new ll = new a144_linked_list_find_middle_element_tried_some_new();
+        for(int i = 55; i >0; i--){
+            ll.push(i);
+        }
+       
+        ll.print(head,"\nLinked List :- ");
+        return_mid mid = ll.find_mid(head);
+        if(mid.c == 0){
+            System.out.println("Empty Linked list");
+        }
+        else if(mid.c == 1){
+            System.out.println("Mid element is :- "+mid.m.data);
+        }
+        else if (mid.c == 2){
+            System.out.println("Mid elements are :- "+mid.m.data+" and "+mid.m.next.data);
+        }
+    } 
+}
