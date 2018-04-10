@@ -1,0 +1,47 @@
+public class a143_linked_list_find_middle_element {
+    
+    class Node{
+        int data;
+        Node next;
+        Node(int d){
+            data = d;
+            next = null;
+        }
+    }
+    static Node head;
+    public void push(int d){
+        Node n = new Node(d);
+        n.next = head;
+        head = n;
+    }
+    
+    public void print(Node node, String str){
+        System.out.println(str);
+        while(node != null){
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+        System.out.println();
+    }   
+    
+    Node find_mid(Node node){
+        Node mid = head;
+        while(node.next != null && node.next.next != null){
+            mid = mid.next;
+            node = node.next.next;
+        }
+        return mid;
+    }
+    
+    public static void main(String args[]){
+        a1143_linked_list_find_middle_element ll = new a1143_linked_list_find_middle_element();
+        for(int i = 13; i >0; i--){
+            ll.push(i);
+        }
+        
+        ll.print(head,"\nLinked List :- ");
+        Node mid = ll.find_mid(head);
+        System.out.println("Mid element is :- "+mid.data);
+    } 
+}
+
