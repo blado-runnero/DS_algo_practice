@@ -18,7 +18,9 @@ public class a146_alternate_reverse {
             next = null;
         }
     }
+    
     static Node head;
+    
     public void push(int d){
         Node n = new Node(d);
         n.next = head;
