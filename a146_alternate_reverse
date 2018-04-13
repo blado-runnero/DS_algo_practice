@@ -36,6 +36,7 @@ public class a146_alternate_reverse {
         System.out.println();
     }
     
+    
      Node reverse(Node node,int n){
          Node curr = node,next,prev;
          next = prev = null;
