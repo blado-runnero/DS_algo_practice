@@ -27,6 +27,7 @@ public class a146_alternate_reverse {
         head = n;
     }
     
+    
     public void print(Node node, String str){
         System.out.println(str);
         while(node != null){
