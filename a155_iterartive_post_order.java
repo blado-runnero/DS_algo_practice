@@ -32,7 +32,6 @@ public class a155_iterartive_post_order {
         
         while(!stack.isEmpty()){
             Node n = stack.pop();
-            
             if(n.right != null){
                 
                
