@@ -1,0 +1,67 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkg100_days_of_code;
+
+import java.util.Arrays;
+
+/**
+ *
+ * @author bladeRUNNER
+ */
+public class a172_coin_change_problem_revisited {
+    
+    static long count_ways(int coins[], int m, int sum){
+        long[] table = new long[sum+1];
+        Arrays.fill(table, 0);
+        table[0] = 1;
+        for(int i = 0; i<m; i++){
+            for(int j = coins[i]; j<=sum; j++){
+                table[j] = table[j] + table[j-coins[i]];
+            }
+        }
+        return table[sum];
+    }
+    
+    static long count_ways_no_space_save(int coins[], int m, int sum){
+        long[][] table = new long[m+1][sum+1];
+        for(int i = 0; i<m+1;i++ ){table[i][0]=1;}
+        
+        for(int i = 1; i<=m; i++){
+            for(int j = 1; j<=sum; j++){
+                if(coins[i-1]>j){
+                    table[i][j] = table[i-1][j];
+                }
+                else{
+                table[i][j] = table[i-1][j] + table[i][j-coins[i-1]];
+                }
+                
+            }
+        }
+        return table[m][sum];
+    }
+    
+    static long count_ways_space_save(int coins[], int m, int sum){
+        long[] table = new long[sum+1];
+        table[0] = 1;
+        
+        for(int i = 0; i<m; i++){
+            for(int j = 1; j<=sum; j++){
+                if(j>=coins[i]){
+                table[j] = table[j] + table[j-coins[i]];
+                }
+            }
+        }
+        return table[sum];
+    }
+    
+    
+    public static void main(String args[]){
+        int coins[] = {1,2,3};
+        int m = coins.length;
+        int sum = 10;
+        System.out.println(count_ways_space_save(coins,m,sum));
+    }
+}
