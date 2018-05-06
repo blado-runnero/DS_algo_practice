@@ -20,6 +20,7 @@ public class a208_rearrange_in_a_b_format {
         for(int i = 0; i<arr.length; i++){System.out.print(arr[i]+"\t");}
         System.out.println();
     }
+    
    public static void main(String args[]){
        int arr[] = {1,2,9,15};
        int i = 0; int j = arr.length/2;
