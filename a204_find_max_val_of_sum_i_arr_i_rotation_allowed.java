@@ -32,4 +32,5 @@ public class a204_find_max_val_of_sum_i_arr_i_rotation_allowed {
         int arr[] = {10,1,2,3,4,5,6,7,8,9};
         System.out.println("Max sum from the array is :- "+max_sum(arr));
     }
+    
 }
