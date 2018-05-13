@@ -17,7 +17,7 @@ public class a210_find_first_missing_number_positive {
         ArrayList<Integer> a = new ArrayList<>();
         a.add(-5);
         
-        System.out.println(a+"             "+a.size()+"scsdc");
+        System.out.println(a+"       "+a.size()+"scsdc");
         
         int n = a.size();
         int[] ret = new int[n+2];
