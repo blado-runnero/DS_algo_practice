@@ -7,10 +7,6 @@ package new_package;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author bladeRUNNER
- */
 public class a214_longest_palindromic_sequence {
     public static void main(String args[]){
         String x = "arpitip";
