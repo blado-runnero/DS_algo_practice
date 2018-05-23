@@ -15,6 +15,7 @@ public class a214_longest_palindromic_sequence {
         System.out.println("LPS word :- "+lps_string(x));
         
     }
+ 
     
     static int lps(String x){
         int n = x.length();
