@@ -24,6 +24,7 @@ public class a212_lexicographicallly_permutataion_rank {
         for(int i = 0; i<a.length; i++){
             aa.add(a[i]);
         }
+        
         int n = aa.size();
         for(int i = 0 ; i < a.length ; i++){
             char x = str.charAt(i);
